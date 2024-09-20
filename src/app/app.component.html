@@ -16,10 +16,10 @@
   </div>
   <!-- Button Container -->
   <div class="buttons my-3">
-    <button class="btn btn-sm btn-success">
+    <button *ngIf="!editEnabled" class="btn btn-sm btn-success">
       Add Project
     </button>
-    <div class="editButtons">
+    <div *ngIf="editEnabled" class="editButtons">
       <button class="btn btn-sm btn-primary me-2">
         Save Edit
       </button>

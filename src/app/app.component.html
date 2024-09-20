@@ -34,12 +34,12 @@
     <button *ngIf="!editEnabled" class="btn btn-md btn-success mb-3" (click)="addProject()">
       Add Project
     </button>
-    <div *ngIf="editEnabled" class="editButtons">
-      <button class="btn btn-sm btn-primary me-2" (click)="saveEdits()">
-        Save Edit
+    <div *ngIf="editEnabled" class="editButtons mb-3">
+      <button class="btn btn-md btn-success me-2" (click)="saveEdits()">
+        Save Edits
       </button>
-      <button class="btn btn-sm btn-primary" (click)="cancelEdits()">
-        Cancel Edits
+      <button class="btn btn-md btn-warning" (click)="cancelEdits()">
+        Cancel
       </button>
     </div>
   </div>

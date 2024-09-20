@@ -37,11 +37,20 @@ export class AppComponent implements OnInit {
     );
   }
   /// UPDATE
-  saveEdits() {}
+  saveEdits() {
+    let index = this.projects.findIndex((x) => x.id === this.project.id);
+    this.projects[index] = Object.assign(new Project(), this.project);
+    this.editEnabled = false;
+    this.saveData(this.projects);
+    this.project.resetProperties();
+  }
   cancelEdits() {}
   /// DELETE - by clickin on the trash btn
   deleteProject(project: Project) {}
 
   // Loads project data to the inputfields
-  loadEdit(project: Project) {}
+  loadEdit(project: Project) {
+    Object.assign(this.project, project);
+    this.editEnabled = true;
+  }
 }

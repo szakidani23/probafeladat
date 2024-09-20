@@ -49,11 +49,25 @@ export class AppComponent implements OnInit {
     this.editEnabled = false;
   }
   /// DELETE - by clickin on the trash btn
-  deleteProject(project: Project) {}
+  deleteProject(project: Project) {
+    this.projects = this.projects.filter((x) => x.id !== project.id);
+    this.saveData(this.projects);
+  }
 
   // Loads project data to the inputfields for editing
   loadEdit(project: Project) {
     Object.assign(this.project, project);
     this.editEnabled = true;
+  }
+
+  // Disables addproject button if inputfields are empty
+  btnDisabled() {
+    return (
+      this.project.name === '' ||
+      this.project.description === '' ||
+      this.project.contactName === '' ||
+      this.project.contactEmail === '' ||
+      this.project.status === ''
+    );
   }
 }

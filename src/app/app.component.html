@@ -7,23 +7,23 @@
       disabled>
     <!-- Project Name -->
     <label class="fs-5 mb-1" for="projectName">Project Name</label>
-    <input id="projectName" type="text" class="form-control mb-2 bg-dark border-0 text-light" [(ngModel)]="project.name"
-      required>
+    <input id="projectName" type="text" class="form-control mb-2 bg-dark border-0 text-light"
+      [(ngModel)]="project.name">
     <!-- Project Description -->
     <label class="fs-5 mb-1" for="projectDescription">Project Description</label>
     <input id="projectDescription" type="text" class="form-control mb-2 bg-dark border-0 text-light"
-      [(ngModel)]="project.description" required>
+      [(ngModel)]="project.description">
     <!-- Contact Person's Name -->
     <label class="fs-5 mb-1" for="contactName">Contact Person's name</label>
-    <input id="contactName" type="text" class="form-control mb-2 bg-dark border-0 text-light" required
+    <input id="contactName" type="text" class="form-control mb-2 bg-dark border-0 text-light"
       [(ngModel)]="project.contactName">
     <!-- Contact Person's EMAIL -->
     <label class="fs-5 mb-1" for="contactName">Contact Person's Email Address</label>
-    <input id="contactEmail" type="email" class="form-control mb-2 bg-dark border-0 text-light" required
+    <input id="contactEmail" type="email" class="form-control mb-2 bg-dark border-0 text-light"
       [(ngModel)]="project.contactEmail">
     <!-- Project Status -->
     <label class="d-block fs-5 mb-1" for="projectStatus">Project Status</label>
-    <select class="bg-dark border-0 text-light p-1" id="projectStatus" [(ngModel)]="project.status" required>
+    <select class="bg-dark border-0 text-light p-1" id="projectStatus" [(ngModel)]="project.status">
       <option value="fejlesztésre vár">fejlesztésre vár</option>
       <option value="folyamatban">folyamatban</option>
       <option value="kész">kész</option>
@@ -31,7 +31,7 @@
   </div>
   <!-- Button Container -->
   <div class="buttons">
-    <button *ngIf="!editEnabled" class="btn btn-md btn-success mb-3" (click)="addProject()">
+    <button *ngIf="!editEnabled" class="btn btn-md btn-success mb-3" (click)="addProject()" [disabled]="btnDisabled()">
       Add Project
     </button>
     <div *ngIf="editEnabled" class="editButtons mb-3">

@@ -1,5 +1,6 @@
 <div class="container">
   <h1 class="mt-5">Listing Projects</h1>
+  <!-- User input fields -->
   <div class="userInputContainer my-5">
     <label class="fs-5 mb-1" for="projectName">Project Name</label>
     <input id="projectName" type="text" class="form-control mb-2 bg-dark border-0 text-light" [(ngModel)]="project.name"
@@ -16,14 +17,14 @@
   </div>
   <!-- Button Container -->
   <div class="buttons my-3">
-    <button *ngIf="!editEnabled" class="btn btn-sm btn-success">
+    <button *ngIf="!editEnabled" class="btn btn-sm btn-success" (click)="addProject()">
       Add Project
     </button>
     <div *ngIf="editEnabled" class="editButtons">
-      <button class="btn btn-sm btn-primary me-2">
+      <button class="btn btn-sm btn-primary me-2" (click)="saveEdits()">
         Save Edit
       </button>
-      <button class="btn btn-sm btn-primary me-2">
+      <button class="btn btn-sm btn-primary me-2" (click)="cancelEdits()">
         Cancel Edits
       </button>
     </div>

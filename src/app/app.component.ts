@@ -12,4 +12,8 @@ export class AppComponent {
   projects: Project[] = [];
   project: Project = new Project();
   editEnabled: boolean = false;
+
+  addProject() {}
+  saveEdits() {}
+  cancelEdits() {}
 }

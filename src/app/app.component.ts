@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
       Object.assign(new Project(), x)
     );
   }
-  /// UPDATE
+  /// UPDATEs table
   saveEdits() {
     let index = this.projects.findIndex((x) => x.id === this.project.id);
     this.projects[index] = Object.assign(new Project(), this.project);
@@ -44,11 +44,14 @@ export class AppComponent implements OnInit {
     this.saveData(this.projects);
     this.project.resetProperties();
   }
-  cancelEdits() {}
+  cancelEdits() {
+    this.project.resetProperties();
+    this.editEnabled = false;
+  }
   /// DELETE - by clickin on the trash btn
   deleteProject(project: Project) {}
 
-  // Loads project data to the inputfields
+  // Loads project data to the inputfields for editing
   loadEdit(project: Project) {
     Object.assign(this.project, project);
     this.editEnabled = true;

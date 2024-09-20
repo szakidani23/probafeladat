@@ -31,7 +31,7 @@
   </div>
   <!-- Button Container -->
   <div class="buttons">
-    <button *ngIf="!editEnabled" class="btn btn-md btn-success" (click)="addProject()">
+    <button *ngIf="!editEnabled" class="btn btn-md btn-success mb-3" (click)="addProject()">
       Add Project
     </button>
     <div *ngIf="editEnabled" class="editButtons">
@@ -73,7 +73,7 @@
             <button class="btn btn-sm btn-warning me-2" (click)="loadEdit(project)">
               <i class="bi bi-pencil"></i>
             </button>
-            <button class="btn btn-sm btn-danger me-2" (click)="deleteProject(project)">
+            <button class="btn btn-sm btn-danger" (click)="deleteProject(project)">
               <i class="bi bi-trash"></i>
             </button>
           </div>

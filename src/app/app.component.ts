@@ -13,9 +13,21 @@ export class AppComponent {
   project: Project = new Project();
   editEnabled: boolean = false;
 
-  addProject() {}
+  /// CREATE
+  addProject() {
+    this.projects.unshift(Object.assign(new Project(), this.project));
+  }
+  /// READs data from LocalStorage
+  loadData() {}
+  /// UPDATE
   saveEdits() {}
   cancelEdits() {}
-  loadEdit(project: Project) {}
+  /// DELETE - by clickin on the trash btn
   deleteProject(project: Project) {}
+
+  // Saves Data to LocalStorage
+  saveData() {}
+
+  // Loads project data to the inputfields
+  loadEdit(project: Project) {}
 }

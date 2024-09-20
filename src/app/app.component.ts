@@ -16,4 +16,6 @@ export class AppComponent {
   addProject() {}
   saveEdits() {}
   cancelEdits() {}
+  loadEdit(project: Project) {}
+  deleteProject(project: Project) {}
 }

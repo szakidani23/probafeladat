@@ -1,15 +1,27 @@
 <div class="container">
   <h1 class="mt-5">Listing Projects</h1>
-  <!-- User input fields -->
+  <!-- User input fields-->
   <div class="userInputContainer my-5">
+    <!-- ID, not visible -->
     <input type="text" class="form-control mb-2 bg-dark border-0 text-light visually-hidden" [(ngModel)]="project.id"
       disabled>
+    <!-- Project Name -->
     <label class="fs-5 mb-1" for="projectName">Project Name</label>
     <input id="projectName" type="text" class="form-control mb-2 bg-dark border-0 text-light" [(ngModel)]="project.name"
       required>
+    <!-- Project Description -->
     <label class="fs-5 mb-1" for="projectDescription">Project Description</label>
     <input id="projectDescription" type="text" class="form-control mb-2 bg-dark border-0 text-light"
       [(ngModel)]="project.description" required>
+    <!-- Contact Person's Name -->
+    <label class="fs-5 mb-1" for="contactName">Contact Person's name</label>
+    <input id="contactName" type="text" class="form-control mb-2 bg-dark border-0 text-light" required
+      [(ngModel)]="project.contactName">
+    <!-- Contact Person's EMAIL -->
+    <label class="fs-5 mb-1" for="contactName">Contact Person's Email Address</label>
+    <input id="contactEmail" type="email" class="form-control mb-2 bg-dark border-0 text-light" required
+      [(ngModel)]="project.contactEmail">
+    <!-- Project Status -->
     <label class="d-block fs-5 mb-1" for="projectStatus">Project Status</label>
     <select class="bg-dark border-0 text-light p-1" id="projectStatus" [(ngModel)]="project.status" required>
       <option value="fejlesztésre vár">fejlesztésre vár</option>
@@ -19,7 +31,7 @@
   </div>
   <!-- Button Container -->
   <div class="buttons">
-    <button *ngIf="!editEnabled" class="btn btn-sm btn-success" (click)="addProject()">
+    <button *ngIf="!editEnabled" class="btn btn-md btn-success" (click)="addProject()">
       Add Project
     </button>
     <div *ngIf="editEnabled" class="editButtons">
@@ -42,6 +54,8 @@
         <th>#</th>
         <th>Project Name</th>
         <th>Project Description</th>
+        <th>ContactP. name</th>
+        <th>ContactP. email</th>
         <th>Status</th>
         <th>Actions</th>
       </tr>
@@ -51,6 +65,8 @@
         <td>{{i + 1}}</td>
         <td>{{project.name}}</td>
         <td>{{project.description}}</td>
+        <td>{{project.contactName}}</td>
+        <td>{{project.contactEmail}}</td>
         <td>{{project.status}}</td>
         <td>
           <div class="modifyButtons d-flex">

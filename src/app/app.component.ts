@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   /// CREATE
   addProject() {
     this.projects.unshift(Object.assign(new Project(), this.project));
+    this.project.resetProperties();
     this.saveData(this.projects);
   }
   /// READs data from LocalStorage

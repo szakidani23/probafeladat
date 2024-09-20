@@ -6,4 +6,13 @@ export class Project {
   status: string = '';
   contactName: string = '';
   contactEmail: string = '';
+
+  resetProperties() {
+    this.id = Guid.create().toString();
+    this.name = '';
+    this.description = '';
+    this.status = '';
+    this.contactName = '';
+    this.contactEmail = '';
+  }
 }

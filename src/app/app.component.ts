@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   project: Project = new Project();
   editEnabled: boolean = false;
   projectLocalDb: string = 'projectLocalDb';
+  ascending: boolean = true;
 
   // Saves Data to LocalStorage
   saveData(projects: Project[]) {
@@ -69,5 +70,15 @@ export class AppComponent implements OnInit {
       this.project.contactEmail === '' ||
       this.project.status === ''
     );
+  }
+
+  // Sorting the table by status
+  sortByStatus() {
+    this.projects.sort((a, b) =>
+      this.ascending
+        ? a.status.localeCompare(b.status)
+        : b.status.localeCompare(a.status)
+    );
+    this.ascending = !this.ascending;
   }
 }

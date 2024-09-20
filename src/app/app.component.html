@@ -11,8 +11,9 @@
       [(ngModel)]="project.name">
     <!-- Project Description -->
     <label class="fs-5 mb-1" for="projectDescription">Project Description</label>
-    <input id="projectDescription" type="text" class="form-control mb-2 bg-dark border-0 text-light"
+    <textarea id="projectDescription" type="text" class="form-control mb-2 bg-dark border-0 text-light"
       [(ngModel)]="project.description">
+    </textarea>
     <!-- Contact Person's Name -->
     <label class="fs-5 mb-1" for="contactName">Contact Person's name</label>
     <input id="contactName" type="text" class="form-control mb-2 bg-dark border-0 text-light"
@@ -53,7 +54,6 @@
       <tr>
         <th>#</th>
         <th>Project Name</th>
-        <th>Project Description</th>
         <th>ContactP. name</th>
         <th>ContactP. email</th>
         <th>Status</th>
@@ -64,7 +64,6 @@
       <tr *ngFor="let project of projects; index as i">
         <td>{{i + 1}}</td>
         <td>{{project.name}}</td>
-        <td>{{project.description}}</td>
         <td>{{project.contactName}}</td>
         <td>{{project.contactEmail}}</td>
         <td>{{project.status}}</td>

@@ -34,8 +34,9 @@
 </div>
 
 <!-- Listing Projects | TABLE | -->
-<div class="tableContainer">
-  <table class="table table-sm table-dark table-striped">
+<p class="fs-2 text-center my-3" *ngIf="projects.length < 1">There are no projects. Please add a new one!</p>
+<div class="tableContainer container">
+  <table *ngIf="projects.length > 0" class="table table-sm table-dark table-striped">
     <thead>
       <tr>
         <th>#</th>
